@@ -26,8 +26,9 @@ var seattle = {
     // this function will calculate the cookies for the whole day
     for (var i = 0; i < openHours.length; i++) {
       var cookies = Math.ceil(this.calculateCustomersOnce()*this.avgNumCookies);
-      console.log(cookies);
+      // console.log(cookies);
       this.hourlySales.push(cookies); //this stores cookies into end of array
+      this.dailySales += cookies; // this adds each days cookies to the one before it
     }
   },
   // This function will render to the page the store list
@@ -44,13 +45,17 @@ var seattle = {
     for (var i = 0; i < openHours.length; i++){
       storeStats = document.createElement('li');
       storeStats.textContent = openHours[i] + ' ' + this.hourlySales[i] + ' cookies';
-      console.log(this.calculateEachHourCookieSales);
+      // console.log(this.calculateEachHourCookieSales);
       storeList.appendChild(storeStats);
     }
+    var newListItem = document.createElement('li');
+    newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
+    storeList.appendChild(newListItem);
+    console.log(this.dailySales);
   }
 };
 
-console.log('hourlySales', seattle.hourlySales);
+// console.log('hourlySales', seattle.hourlySales);
 seattle.calculateCustomersOnce();
 seattle.calculateCookiesAllHours();
 seattle.renderToPage();
@@ -73,6 +78,7 @@ var tokyo = {
       var cookies = Math.ceil(this.calculateCustomersOnce()*this.avgNumCookies);
       console.log(cookies);
       this.hourlySales.push(cookies); //this stores cookies into end of array
+      this.dailySales += cookies;
     }
   },
   // This function will render to the page the store list
@@ -92,6 +98,9 @@ var tokyo = {
       console.log(this.calculateEachHourCookieSales);
       storeList.appendChild(storeStats);
     }
+    var newListItem = document.createElement('li');
+    newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
+    storeList.appendChild(newListItem);
   }
 };
 tokyo.calculateCustomersOnce();
@@ -116,6 +125,7 @@ var dubai = {
       var cookies = Math.ceil(this.calculateCustomersOnce()*this.avgNumCookies);
       console.log(cookies);
       this.hourlySales.push(cookies); //this stores cookies into end of array
+      this.dailySales += cookies;
     }
   },
   // This function will render to the page the store list
@@ -135,6 +145,9 @@ var dubai = {
       console.log(this.calculateEachHourCookieSales);
       storeList.appendChild(storeStats);
     }
+    var newListItem = document.createElement('li');
+    newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
+    storeList.appendChild(newListItem);
   }
 };
 dubai.calculateCustomersOnce();
@@ -161,6 +174,7 @@ var paris = {
       var cookies = Math.ceil(this.calculateCustomersOnce()*this.avgNumCookies);
       console.log(cookies);
       this.hourlySales.push(cookies); //this stores cookies into end of array
+      this.dailySales += cookies;
     }
   },
   // This function will render to the page the store list
@@ -180,6 +194,9 @@ var paris = {
       console.log(this.calculateEachHourCookieSales);
       storeList.appendChild(storeStats);
     }
+    var newListItem = document.createElement('li');
+    newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
+    storeList.appendChild(newListItem);
   }
 };
 paris.calculateCustomersOnce();
@@ -204,6 +221,7 @@ var lima = {
       var cookies = Math.ceil(this.calculateCustomersOnce()*this.avgNumCookies);
       console.log(cookies);
       this.hourlySales.push(cookies); //this stores cookies into end of array
+      this.dailySales += cookies;
     }
   },
   // This function will render to the page the store list
@@ -223,8 +241,12 @@ var lima = {
       console.log(this.calculateEachHourCookieSales);
       storeList.appendChild(storeStats);
     }
+    var newListItem = document.createElement('li');
+    newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
+    storeList.appendChild(newListItem);
   }
 };
 lima.calculateCustomersOnce();
 lima.calculateCookiesAllHours();
 lima.renderToPage();
+
