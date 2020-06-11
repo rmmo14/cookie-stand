@@ -62,7 +62,7 @@ function renderTableHeader() {
 
   // this code below will create a table header saying Total
   var totalRow = document.createElement('th');
-  totalRow.textContent = 'Total ';
+  totalRow.textContent = 'Day Total ';
   newParent.appendChild(totalRow);
   getTable.appendChild(newParent);
 }
@@ -103,18 +103,20 @@ function renderTableFooter (){
   var newChild = document.createElement('th');
   newChild.textContent = 'Hourly Total ';
   newParent.appendChild(newChild);
-  // need a loop to add up the columns
+  var allTotalSales = 0;
+
   for (var i = 0; i < openHours.length; i++){
-    var otherChild = document.createElement('td');
     var allSales = 0;
+    var otherChild = document.createElement('td');
+
     for (var j = 0; j < theBranches.length; j++){
-      allSales += theBranches[i].hourlySales[j];
+      allSales += theBranches[j].hourlySales[i];
     }
     otherChild.textContent = allSales;
     newParent.appendChild(otherChild);
   }
   // the last column last row should be the total sold
-  var otroChild = document.createElement('th');
+  var otroChild = document.createElement('td');
   var colTotal = 0;
   for (var k = 0; k < theBranches.length; k++){
     colTotal += theBranches[k].dailySales;
@@ -154,8 +156,8 @@ for (var i = 0; i < theBranches.length; i++){
   theBranches[i].calculateCookiesAllHours();
   theBranches[i].renderData();
 }
-
-
+renderTableFooter();
+// ================= dont need these below since they are repeated and can make them dynamic as shown above
 // seattle.calculateCustomersOnce();
 // seattle.calculateCookiesAllHours();
 // //seattle.renderToPage();
