@@ -45,11 +45,11 @@ function refreshTable(){
   getTable.innerHTML = '';
   // this (above) makes the html inside the table be an empty string
 
-  // recreate theader 
+  // recreate theader
   renderTableHeader();
   // recreate body
   for (var i = 0; i < theBranches.length; i++){
-  theBranches[i].renderData();
+    theBranches[i].renderData();
   }
   // recreate footer
   renderTableFooter();
@@ -156,7 +156,6 @@ function renderTableFooter (){
   var newChild = document.createElement('th');
   newChild.textContent = 'Hourly Total ';
   newParent.appendChild(newChild);
-  var allTotalSales = 0;
 
   for (var i = 0; i < openHours.length; i++){
     var allSales = 0;
