@@ -8,56 +8,51 @@
 </head>
 
 <body>
-  <form>
-    <label for=""></label>
-    <input type="" name="">
-  </form>
-  <form>
-    <label for=""></label>
-    <input type="" name="">
-  </form>
-  <form>
-    <label for=""></label>
-    <input type="" name="">
-  </form>
-  <form>
-    <label for=""></label>
-    <input type="" name="">
-  </form>
-  <!-- <form>
-    <label for = ""></label>
-    <input type = "" name = "">
-  </form> -->
+  <table id = "branches">
+  </table>
+
+
+   <ul id = "seattle-ul"></ul>
+   <ul id = "tokyo-ul"></ul>
+   <ul id = "dubai-ul"></ul>
+   <ul id = "paris-ul"></ul>
+   <ul id = "lima-ul"></ul>
+
+   <div>
+
+   </div>
 
   <form id = "datainput">
     <fieldset>
       <!-- Fieldset groups relate forms, in this case data about branches -->
       <legend>Branch Details</legend>
-      <form>
-        <label for="storeid">Store ID</label>
+      
+        <label for="storeID">Store ID</label>
         <input type="text" name="storeID">
-      </form>
-      <form>
-        <label for="storename">Store Location</label>
+      
+      
+        <label for="store">Store Location</label>
         <input type="text" name="store">
-      </form>
-      <form>
-        <label for="mincust">Min Customers</label>
+      
+      
+        <label for="min">Min Customers</label>
         <input type="number" name="min">
-      </form>
-      <form>
-        <label for="maxcust">Max Customers</label>
+      
+      
+        <label for="max">Max Customers</label>
         <input type="number" name="max">
-      </form>
-      <form>
+      
+      
         <label for="avgcookie">Avg Cookies</label>
-        <input type="" name="">
-      </form>
+        <input type="number" name="avg">
+      
 
   <button>Submit</button>
+  <button id = "populate">Create</button>
   <!-- <input type = "" value = ""> -->
     </fieldset>
   </form>
+  <script src="js/script2.js"></script>
 </body>
 
 </html>

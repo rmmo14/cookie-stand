@@ -1,24 +1,67 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Pat's Salmon Cookies</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel = "label" href="img/salmon.png">
-  </head>
-  <body>
-    <h1>Sales Page</h1>
-   <table id = "branches">
-   </table>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pat's Forms</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
 
-    <ul id = "seattle-ul"></ul>
-    <ul id = "tokyo-ul"></ul>
-    <ul id = "dubai-ul"></ul>
-    <ul id = "paris-ul"></ul>
-    <ul id = "lima-ul"></ul>
-    
-    <script src="js/script2.js"></script>
-  </body>
+<body>
+  <header>
+    <h1>Salmon Branch Sales</h1>
+    <ul>
+      <li><a href = "index.html">Home Page</a></li>
+      <li><a href = "sales.html">Sales Page</a></li>
+    </ul>
+  </header>
+
+   <ul id = "seattle-ul"></ul>
+   <ul id = "tokyo-ul"></ul>
+   <ul id = "dubai-ul"></ul>
+   <ul id = "paris-ul"></ul>
+   <ul id = "lima-ul"></ul>
+ 
+
+   <div>
+
+   </div>
+
+  <form id = "datainput">
+    <fieldset>
+      <!-- Fieldset groups relate forms, in this case data about branches -->
+      <legend>Branch Details</legend>
+      
+        <label for="storeID">Store ID</label>
+        <input type="text" name="storeID">
+      
+      
+        <label for="store">Store Location</label>
+        <input type="text" name="store">
+      
+      
+        <label for="min">Min Customers</label>
+        <input type="number" name="min">
+      
+      
+        <label for="max">Max Customers</label>
+        <input type="number" name="max">
+      
+      
+        <label for="avgcookie">Avg Cookies</label>
+        <input type="number" name="avg">
+      
+
+  <button id = "populate">Submit</button>
+  <!-- <input type = "" value = ""> -->
+    </fieldset>
+  </form>
+
+  <table id = "branches">
+  </table>
+
+  <script src="js/script2.js"></script>
+</body>
+
 </html>

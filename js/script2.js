@@ -9,7 +9,60 @@ function randomNumber(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * ((max + 1) - min) + min);
 }
+// ============== forms =========
+var dataInput = document.getElementById('datainput');
 
+dataInput.addEventListener('submit', function(e){
+  e.preventDefault();
+  console.log(e);
+  var theEvent = e;
+  var theForm = theEvent.target;
+  // console.log(theForm)
+
+  var branchId = theForm.storeID;
+  console.log(branchId);
+
+  var branchName = branchId.value;
+  console.log(branchName);
+
+
+  var branch = e.target.storeID.value;
+  var name = e.target.store.value;
+  var min = e.target.min.value;
+  var max = e.target.max.value;
+  var avg = e.target.avg.value;
+
+  var newStore = new SalmonBranch(branch, name, min, max, avg);
+  newStore.calculateCookiesAllHours();
+  newStore.calculateCustomersOnce();
+  refreshTable();
+});
+
+// RECEIVED HELP ON THIS FUNCTION FROM SKYLER TA
+function refreshTable(){
+  // flush/clear the table
+  var getTable = document.getElementById('branches');
+  getTable.innerHTML = '';
+  // this (above) makes the html inside the table be an empty string
+
+  // recreate theader 
+  renderTableHeader();
+  // recreate body
+  for (var i = 0; i < theBranches.length; i++){
+  theBranches[i].renderData();
+  }
+  // recreate footer
+  renderTableFooter();
+}
+
+var createButton = document.getElementById('populate');
+
+createButton.addEventListener('submit', function(e){
+  e.preventDefault();
+  console.log('populated', e);
+});
+
+// ======= other functions ============
 function calculateCustomersOnce() {
   // this function generates a random number between the min and max values in the object
   var customers = randomNumber(this.minNumCustomers, this.maxNumCustomers);
@@ -66,7 +119,7 @@ function renderTableHeader() {
   newParent.appendChild(totalRow);
   getTable.appendChild(newParent);
 }
-renderTableHeader();
+renderTableHeader(); // takes care of initial page load
 
 // ========= function to populate the rest (body) ====
 function renderData() {
@@ -141,10 +194,11 @@ function SalmonBranch(id, location, minNumCustomers, maxNumCustomers, avgNumCook
 
 SalmonBranch.prototype.calculateCustomersOnce = calculateCustomersOnce;
 SalmonBranch.prototype.calculateCookiesAllHours = calculateCookiesAllHours;
-SalmonBranch.prototype.renderToPage = renderToPage;
+// SalmonBranch.prototype.renderToPage = renderToPage;
 SalmonBranch.prototype.renderData = renderData;
 
 // ======= declare new branches ======
+
 new SalmonBranch('seattle', 'Seattle', 23, 65, 6.3);
 new SalmonBranch('tokyo', 'Tokyo', 3, 24, 1.2);
 new SalmonBranch('dubai', 'Dubai', 11, 38, 3.7);
@@ -157,6 +211,8 @@ for (var i = 0; i < theBranches.length; i++){
   theBranches[i].renderData();
 }
 renderTableFooter();
+
+
 // ================= dont need these below since they are repeated and can make them dynamic as shown above
 // seattle.calculateCustomersOnce();
 // seattle.calculateCookiesAllHours();
