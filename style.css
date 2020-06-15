@@ -1,10 +1,41 @@
-
-
 body {
-  background-color: beige;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
 }
 
 table {
   background-color: lightblue;
 }
 
+h1, h2 {
+  text-align: center;
+}
+
+header > section > nav > ul > li {
+  display: inline-block;
+  width: 250px; 
+  text-align: center;
+  background-color: lightcoral; 
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.salmon {
+  width: 470px;
+  mix-blend-mode: multiply;
+  /* code above was found on stackoverflow by user1822264 */
+}
+
+article img{
+  width 
+}
+
+
+#low {
+  margin-top: 15px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
