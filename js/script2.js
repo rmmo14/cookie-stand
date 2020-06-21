@@ -79,21 +79,21 @@ function calculateCookiesAllHours() {
   }
 }
 // renderToPage is not being called atm
-function renderToPage() {
-  // need to render to page by referencing the ul the store belongs to
-  var storeList = document.getElementById(this.id + '-ul');
-  var storeStats = document.createElement('h2');
-  storeStats.textContent = this.location;
-  storeList.appendChild(storeStats);
-  for (var j = 0; j < openHours.length; j++) {
-    storeStats = document.createElement('li');
-    storeStats.textContent = openHours[j] + ' ' + this.hourlySales[j] + ' cookies';
-    storeList.appendChild(storeStats);
-  }
-  var newListItem = document.createElement('li');
-  newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
-  storeList.appendChild(newListItem);
-}
+// function renderToPage() {
+//   // need to render to page by referencing the ul the store belongs to
+//   var storeList = document.getElementById(this.id + '-ul');
+//   var storeStats = document.createElement('h2');
+//   storeStats.textContent = this.location;
+//   storeList.appendChild(storeStats);
+//   for (var j = 0; j < openHours.length; j++) {
+//     storeStats = document.createElement('li');
+//     storeStats.textContent = openHours[j] + ' ' + this.hourlySales[j] + ' cookies';
+//     storeList.appendChild(storeStats);
+//   }
+//   var newListItem = document.createElement('li');
+//   newListItem.textContent = 'Total: ' + this.dailySales + ' cookies';
+//   storeList.appendChild(newListItem);
+// }
 
 // ============= table ================
 
