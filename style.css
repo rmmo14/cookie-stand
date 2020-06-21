@@ -2,19 +2,38 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
+  background-color: bisque;
+  font-family: 'Times New Roman', Times, serif
 }
 
 table {
   background-color: lightblue;
+  text-align: center;
+  border: 2px solid black;
+  overflow: hidden;
 }
 
-h1, h2 {
+h1 {
+  font-size: 3em;
+  color: darkblur;
   text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+header > section > nav {
+  width: 800px;
+}
+
+nav > ul {
+  margin-left: 80px;
 }
 
 header > section > nav > ul > li {
   display: inline-block;
-  width: 250px; 
+  width: 300px; 
   text-align: center;
   background-color: lightcoral; 
   border: 1px solid black;
@@ -29,9 +48,37 @@ header > section > nav > ul > li {
   /* code above was found on stackoverflow by user1822264 */
 }
 
-article img{
-  width 
+th {
+  background-color: lightcoral;
 }
+
+td {
+  font-family: "Lucida Console", Courier, monospace;
+  color: blueviolet;
+}
+
+th, td {
+  border: 2px solid black;
+  width: 95px;
+  height: 39px;
+  position: relative;
+}
+
+tr:hover {
+  background-color: #ffa;
+}
+
+/* This code for hover is from CSS-tricks */
+
+
+
+form {
+  margin-bottom: 50px;
+}
+
+/* article img{
+  width 
+} */
 
 
 #low {
